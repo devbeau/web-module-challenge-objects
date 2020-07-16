@@ -37,9 +37,9 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
-console.log(burger.student());
-console.log(burger.teacher());
-console.log(burger.public());
+console.log(burger.student()); // method is added to burger object at top
+console.log(burger.teacher()); // "                                      "
+console.log(burger.public()); // "                                        "
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -77,7 +77,7 @@ and should return a string in the format `{name} gave the restaurant a {rating},
  * it will return `Daniela gave the restaurant a 5 star review and their feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
 function getReviewByIndex(reviews, index) {
-  let returnString = `${reviews[index].name} gave the restaurant a ${reviews[index].rating} and their feedback was: ${reviews[index].feedback}`
+  const returnString = `${reviews[index].name} gave the restaurant a ${reviews[index].rating} and their feedback was: ${reviews[index].feedback}`
   return returnString;
   }
 console.log(getReviewByIndex(reviews, 3));
@@ -92,9 +92,9 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
 function getLastReview(reviews) {
-  let index = (reviews.length - 1);
+  const index = (reviews.length - 1);
   console.log(index);
-  let returnString = `${reviews[index].name} gave the restaurant a ${reviews[index].rating} and their feedback was: ${reviews[index].feedback}`
+  const returnString = `${reviews[index].name} gave the restaurant a ${reviews[index].rating} and their feedback was: ${reviews[index].feedback}`
   return returnString;
   } 
 console.log(getLastReview(reviews));
@@ -113,16 +113,15 @@ console.log(getLastReview(reviews));
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
 
- function getReviewByRating(reviews, grade) {
-  let subArray = [];
-
-    for (i = 0; i < reviews.length; i++){
-      console.log(Math.floor(reviews[i].rating));
-      if (Math.floor(reviews[i].rating) === Math.floor(grade)){
-        subArray.push(reviews[i]);
-      };
-    }
-    return subArray;
+function getReviewByRating(reviews, grade) {
+  const subArray = [];
+  for (i = 0; i < reviews.length; i++){
+    console.log(Math.floor(reviews[i].rating));
+    if (Math.floor(reviews[i].rating) === Math.floor(grade)){
+      subArray.push(reviews[i]);
+    };
+  }
+  return subArray;
   }
 console.log(getReviewByRating(reviews, 4));
   
@@ -140,13 +139,11 @@ and should return an array of objects.
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
   function getLongReviews(reviews) {
-    let subArray = [];
+    const subArray = [];
     for (i = 0; i < reviews.length; i++){
       let strCompare = reviews[i].feedback.split(" ");
-      if (strCompare.length > 15){
-        subArray.push(reviews[i]);
+      if (strCompare.length > 15){subArray.push(reviews[i]);
       }
-
     }
     return subArray;
   }
@@ -177,11 +174,10 @@ function carMaker(odom) {
       odometer: odom,
       drive: function(dist) {return this.odometer = odom + dist;}
     }
-
     return objCar;
 }
 
-let objCar = carMaker(10000);
+const objCar = carMaker(10000);
 console.log(objCar);
 console.log(objCar.drive(1200));
 console.log(objCar);

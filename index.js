@@ -5,9 +5,9 @@ const burger =
   {name: "Burger",
   price: 18,
   category: "Lunch",
-  teacher: () => burger.price*0.75,
-  student: () => burger.price*0.75,
-  public: () => burger.price*0.90
+  teacher: () => burger.price*0.75, // The Methods Were
+  student: () => burger.price*0.75, // Added For Task
+  public: () => burger.price*0.90   // Two Below
 };
 const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
 
@@ -23,9 +23,9 @@ function createMenuItem(name, cost, category){
 }
 
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
-console.log(createMenuItem("Hot Pie", 20, "Lunch"));
-console.log(createMenuItem("Hot Chocolate", 40, "Drinks"));
-console.log(createMenuItem("Quiche", 60, "Breakfast"));
+console.log("This is task 1b", createMenuItem("Hot Pie", 20, "Lunch"));
+console.log("This is task 1b", createMenuItem("Hot Chocolate", 40, "Drinks"));
+console.log("This is task 1b", createMenuItem("Quiche", 60, "Breakfast"));
 
 
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
@@ -37,9 +37,9 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
-console.log(burger.student()); // method is added to burger object at top
-console.log(burger.teacher()); // "                                      "
-console.log(burger.public()); // "                                        "
+console.log("This is Task 2", burger.student()); // method is added to burger object at top
+console.log("This is Task 2", burger.teacher()); // "                                      "
+console.log("This is Task 2", burger.public()); // "                                        "
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -55,15 +55,15 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 ]
 
 /* Task 3: Console.log just Julius' feedback */
-console.log(reviews[5].feedback);
+console.log("This is Task 3", reviews[5].feedback);
 
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 reviews.push({name: "Beau", rating: 0.0, feedback: "There was a soup in my fly."});
-console.log(reviews);
+console.log("This is Task 4", reviews);
 /* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays" */
 reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays"
-console.log(reviews[7]);
+console.log("This is Task 5", reviews[7]);
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
 
  Your function should take two arguments:
@@ -80,7 +80,7 @@ function getReviewByIndex(reviews, index) {
   const returnString = `${reviews[index].name} gave the restaurant a ${reviews[index].rating} and their feedback was: ${reviews[index].feedback}`
   return returnString;
   }
-console.log(getReviewByIndex(reviews, 3));
+console.log("This is Task 6", getReviewByIndex(reviews, 3));
 
 /* Task 7: Write a function to get information about the most recent review called `getLastReview`
 
@@ -97,7 +97,7 @@ function getLastReview(reviews) {
   const returnString = `${reviews[index].name} gave the restaurant a ${reviews[index].rating} and their feedback was: ${reviews[index].feedback}`
   return returnString;
   } 
-console.log(getLastReview(reviews));
+console.log("This is Task 7", getLastReview(reviews));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
@@ -116,14 +116,14 @@ console.log(getLastReview(reviews));
 function getReviewByRating(reviews, grade) {
   const subArray = [];
   for (i = 0; i < reviews.length; i++){
-    console.log(Math.floor(reviews[i].rating));
+    console.log("This is the floor of the reviews for Stretch 1", Math.floor(reviews[i].rating));
     if (Math.floor(reviews[i].rating) === Math.floor(grade)){
       subArray.push(reviews[i]);
     };
   }
   return subArray;
   }
-console.log(getReviewByRating(reviews, 4));
+console.log("This is Stretch 1", getReviewByRating(reviews, 4));
   
 /** STRETCH 2: Write a function called 'getLongestReview' that returns an array containing all reviews longer than 15 words. 
   
@@ -148,7 +148,7 @@ and should return an array of objects.
     return subArray;
   }
 
-  console.log(getLongReviews(reviews));
+  console.log("This is Stretch 2", getLongReviews(reviews));
 
   
 
@@ -178,6 +178,6 @@ function carMaker(odom) {
 }
 
 const objCar = carMaker(10000);
-console.log(objCar);
-console.log(objCar.drive(1200));
-console.log(objCar);
+console.log("This is Stretch 3 before .drive method", objCar);
+console.log("This is Stretch 3 .drive method", objCar.drive(1200));
+console.log("This is Stretch 3 after .drive method", objCar);
